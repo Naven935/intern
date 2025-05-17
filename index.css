@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-gray-50;
+  }
+  
+  h1 {
+    @apply text-3xl font-bold md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl font-semibold md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl font-semibold md:text-2xl;
+  }
+  
+  h4 {
+    @apply text-lg font-medium md:text-xl;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply text-white bg-primary-500 hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply text-white bg-secondary-500 hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-white hover:bg-gray-50 focus:ring-primary-500;
+  }
+
+  .card {
+    @apply overflow-hidden bg-white rounded-lg shadow-md transition-shadow hover:shadow-lg;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
